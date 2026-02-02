@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bubu ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 { color: #d81b60; font-size: 2.5rem; margin-bottom: 20px; }
+        .gif-container img { width: 200px; border-radius: 10px; margin-bottom: 20px; }
+        .buttons { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; }
+        button { padding: 15px 30px; font-size: 1.2rem; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: bold; }
+        #yesBtn { background-color: #4caf50; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        #noBtn { background-color: #f44336; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        #success-message { display: none; flex-direction: column; align-items: center; }
+        #success-message h1 { font-size: 3rem; color: #d81b60; }
+    </style>
+</head>
+<body>
+    <div class="container" id="question-container">
+        <div class="gif-container"><img src="https://media1.tenor.com/m/hnFkP8a2s7oAAAAC/milk-and-mocha-bear.gif" alt="Cute Bear"></div>
+        <h1>Will you be my Valentine, Bubu?</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="acceptLove()">Yes</button>
+            <button id="noBtn" onclick="rejectLove()">No</button>
+        </div>
+    </div>
+    <div id="success-message">
+        <div class="gif-container"><img src="https://media1.tenor.com/m/gUiu1zyxfzYAAAAC/bear-kiss-bear-kisses.gif" alt="Happy Bear"></div>
+        <h1>Yayyy! I knew it! ❤️</h1>
+    </div>
+    <script>
+        let noClickCount = 0;
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const noTexts = ["Are you sure?", "Really sure?", "Bubu please?", "Don't do this!", "I'm gonna cry...", "Heartbroken...", "Just click Yes!"];
+        function rejectLove() {
+            noClickCount++;
+            yesBtn.style.fontSize = `${parseFloat(window.getComputedStyle(yesBtn).fontSize) + 20}px`;
+            if (noClickCount < noTexts.length) { noBtn.innerText = noTexts[noClickCount]; } 
+            else { noBtn.style.display = 'none'; }
+        }
+        function acceptLove() {
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('success-message').style.display = 'flex';
+            document.body.style.backgroundColor = "#ffcdd2";
+        }
+    </script>
+</body>
+</html>
