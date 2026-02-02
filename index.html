@@ -23,40 +23,41 @@
             background-repeat: no-repeat;
         }
 
-        /* This creates a semi-transparent white box so text is readable */
+        /* COMPACT CONTAINER */
         .container {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.75); 
+            padding: 25px;
+            border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            max-width: 90%;
+            max-width: 85%;
+            backdrop-filter: blur(2px);
         }
 
         h1 {
             color: #d81b60;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin: 10px 0 20px 0;
             text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .gif-container img {
-            width: 200px;
+            width: 150px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
         }
 
         .buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 10px 25px;
+            font-size: 1.1rem;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -71,17 +72,17 @@
             display: none;
             flex-direction: column;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
             border-radius: 20px;
         }
-        #success-message h1 { font-size: 3rem; color: #d81b60; }
+        #success-message h1 { font-size: 2.5rem; color: #d81b60; }
     </style>
 </head>
 <body>
     <div class="container" id="question-container">
         <div class="gif-container">
-            <img src="https://media.tenor.com/K2QKkyj2GckAAAAC/mocha-bear-hearts.gif" alt="Cute Bear">
+            <img src="mocha-bear-hearts.gif" alt="Cute Bear">
         </div>
         <h1>Will you be my Valentine, Bubu?</h1>
         <div class="buttons">
@@ -92,7 +93,7 @@
 
     <div id="success-message">
         <div class="gif-container">
-            <img src="https://media.tenor.com/gUiu1zyxfzYAAAAC/bear-kiss-bear-kisses.gif" alt="Happy Bear">
+            <img src="bear-kiss-bear-kisses.gif" alt="Happy Bear">
         </div>
         <h1>Yayyy! I knew it! ❤️</h1>
     </div>
@@ -116,7 +117,6 @@
         function acceptLove() {
             document.getElementById('question-container').style.display = 'none';
             document.getElementById('success-message').style.display = 'flex';
-            // We don't change background color anymore so we can see the photo!
         }
     </script>
 </body>
